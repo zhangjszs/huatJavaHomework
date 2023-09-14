@@ -12,10 +12,10 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         System.out.println("==== 字符版计算器1 ====");
         // 提示用户输入第一个操作数
-        System.out.print("请输入第一个操作数 (x) = : ");
+        System.out.print("请输入第一个操作数 (x) =  ");
         double x = scanner.nextDouble();
         // 提示用户输入第二个操作数
-        System.out.print("请输入第二个操作数 (y) = : ");
+        System.out.print("请输入第二个操作数 (y) =  ");
         double y = scanner.nextDouble();
         System.out.println("运算结果如下：");
         // 计算加法
