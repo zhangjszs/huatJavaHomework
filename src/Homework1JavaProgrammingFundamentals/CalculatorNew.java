@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class CalculatorNew {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("==== 字符版计算器2 ====");
         // 提示用户输入第一个操作数
         System.out.print("请输入第一个操作数: x = ");
         double num1 = scanner.nextDouble();
