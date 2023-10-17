@@ -35,7 +35,7 @@ public class RectangleCalculator {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("==== 矩形的计算器 ====");
+        System.out.println("==== 计算矩形面积周长 ====");
         System.out.print("请输入矩形的长度：");
         double length = scanner.nextDouble();
         System.out.print("请输入矩形的宽度：");

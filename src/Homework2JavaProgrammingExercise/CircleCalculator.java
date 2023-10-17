@@ -29,7 +29,7 @@ public class CircleCalculator {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("==== 圆的计算器 ====");
+        System.out.println("==== 计算园面积周长 ====");
         System.out.print("请输入圆的半径：");
         double radius = scanner.nextDouble();
         CircleCalculator circleCalculator = new CircleCalculator(radius);
