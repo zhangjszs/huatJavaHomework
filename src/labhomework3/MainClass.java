@@ -166,7 +166,7 @@ public class MainClass {
     private static int menuSelect(Scanner scanner) {
         System.out.print("\n");
         System.out.print("\t\t\t  学生信息管理系统功能菜单		\n");
-        System.out.print("\t\t\t       作者：齐心			\n");
+        System.out.print("\t\t\t       作者：KerwinZhang			\n");
         System.out.print("\t\t\t  =======================		\n");
         System.out.print("\t\t\t  1.插入学生信息记录			\n");
         System.out.print("\t\t\t  2.删除学生信息记录			\n");
