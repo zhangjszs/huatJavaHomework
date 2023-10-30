@@ -1,8 +1,6 @@
 package Labhomework4;
 
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
