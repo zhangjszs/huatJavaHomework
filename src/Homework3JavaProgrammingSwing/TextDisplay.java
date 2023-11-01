@@ -15,6 +15,7 @@ public class TextDisplay {
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame("文本显示器");
+        frame.setBackground(Color.GRAY);
         JPanel panel = new JPanel();
         JPanel textPanel = new JPanel();
         JCheckBox boldButton = new JCheckBox("粗体");
@@ -27,8 +28,7 @@ public class TextDisplay {
         Dimension size = frame.getSize();
         int width = 800;
         int height = 600;
-        JTextArea textArea = new JTextArea();
-        textArea.setPreferredSize(new Dimension(width / 2, height / 2));
+        JTextArea textArea = new JTextArea(7, 20);
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         String[] fontNames = ge.getAvailableFontFamilyNames();
         String songTi = null;
@@ -50,15 +50,19 @@ public class TextDisplay {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font font = textArea.getFont();
+                int style = font.getStyle();  // 获取原字体的样式
+                int newStyle;
+
                 if (isBold[0]) {
                     // 切换回正常字体
-                    Font normalFont = new Font(font.getFontName(), Font.PLAIN, font.getSize());
-                    textArea.setFont(normalFont);
+                    newStyle = style & ~Font.BOLD;  // 将粗体位清零
                 } else {
                     // 切换为粗体字体
-                    Font boldFont = new Font(font.getFontName(), Font.BOLD, font.getSize());
-                    textArea.setFont(boldFont);
+                    newStyle = style | Font.BOLD;  // 将粗体位置为1
                 }
+
+                Font newFont = new Font(font.getFontName(), newStyle, font.getSize());
+                textArea.setFont(newFont);
                 isBold[0] = !isBold[0];  // 切换字体样式标志
             }
         });
@@ -69,15 +73,19 @@ public class TextDisplay {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font font = textArea.getFont();
+                int style = font.getStyle();  // 获取原字体的样式
+                int newStyle;
+
                 if (isItalic[0]) {
                     // 切换回正常字体
-                    Font normalFont = new Font(font.getFontName(), Font.PLAIN, font.getSize());
-                    textArea.setFont(normalFont);
+                    newStyle = style & ~Font.ITALIC;  // 将斜体位清零
                 } else {
                     // 切换为斜体字体
-                    Font italicFont = new Font(font.getFontName(), Font.ITALIC, font.getSize());
-                    textArea.setFont(italicFont);
+                    newStyle = style | Font.ITALIC;  // 将斜体位置为1
                 }
+
+                Font newFont = new Font(font.getFontName(), newStyle, font.getSize());
+                textArea.setFont(newFont);
                 isItalic[0] = !isItalic[0];  // 切换字体样式标志
             }
         });
@@ -87,7 +95,7 @@ public class TextDisplay {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font font = textArea.getFont();
-                Font newFont = new Font(font.getFontName(), font.getStyle(), 50);
+                Font newFont = new Font(font.getFontName(), font.getStyle(), 60);
                 textArea.setFont(newFont);
             }
         });
@@ -98,7 +106,7 @@ public class TextDisplay {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Font font = textArea.getFont();
-                Font newFont = new Font(font.getFontName(), font.getStyle(), 25);
+                Font newFont = new Font(font.getFontName(), font.getStyle(), 30);
                 textArea.setFont(newFont);
             }
         });
@@ -123,7 +131,7 @@ public class TextDisplay {
 
         textPanel.add(scrollPane);
         JPanel rightPanel = new JPanel(new BorderLayout());
-        rightPanel.add(scrollPane, BorderLayout.CENTER);
+        rightPanel.add(scrollPane, BorderLayout.WEST);
         frame.add(rightPanel, BorderLayout.EAST);
         frame.add(panel, BorderLayout.WEST);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
