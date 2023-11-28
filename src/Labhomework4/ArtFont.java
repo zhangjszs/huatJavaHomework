@@ -14,6 +14,7 @@ public class ArtFont extends JFrame implements ActionListener, ItemListener {
     String[] fontNames;// 字体名称;
     String[] fontSizes;// 字体大小;
     JLabel label;// 输入提示标签;
+    JLabel labelName;// ;
     JTextField inputText;// 文字输入框;
     JTextArea txtArea;// 文字显示区;
     JPanel northPanel;// 字体设置;
@@ -58,6 +59,7 @@ public class ArtFont extends JFrame implements ActionListener, ItemListener {
     private JPanel getNorthPanel() {
         JPanel panel = new JPanel();
         label = new JLabel("请输入要显示的文字:");
+        labelName = new JLabel("计算机222 章崇文 202202296");
         inputText = new JTextField(10);
         boldBx = new JCheckBox("粗体");
         italicBx = new JCheckBox("斜体");
@@ -67,6 +69,7 @@ public class ArtFont extends JFrame implements ActionListener, ItemListener {
         panel.add(boldBx);
         panel.add(italicBx);
         panel.add(colorBtn);
+        panel.add(labelName);
         //注册事件监视器
         inputText.addActionListener(this);
         boldBx.addItemListener(this);

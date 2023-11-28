@@ -5,13 +5,16 @@ package Labhomework5;
  * @changtime 2023/11/21
  * @projectname schoolJavaHomework
  */
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.*;
 
 public class MoveButton extends Frame implements Runnable, ActionListener {
     // 用Thread类声明first,second,third三个线程对象
     Thread first, second, third;
-
+    JLabel label;
     Button redButton, greenButton, blueButton, startButton;
     int distance = 10;
 
@@ -30,7 +33,7 @@ public class MoveButton extends Frame implements Runnable, ActionListener {
 
         startButton = new Button("start");
         startButton.addActionListener(this);
-
+        label = new JLabel("计算机222 章崇文 202202296");
         setLayout(null);
         add(redButton);
         redButton.setBounds(10, 60, 15, 15);
@@ -40,6 +43,8 @@ public class MoveButton extends Frame implements Runnable, ActionListener {
         blueButton.setBounds(200, 60, 15, 15);
         add(startButton);
         startButton.setBounds(10, 100, 30, 30);
+        add(label);
+        label.setBounds(50, 100, 300, 30);
 
         setTitle("线程接力");
         setBounds(0, 0, 400, 200);
